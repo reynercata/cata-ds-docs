@@ -1,0 +1,206 @@
+/* ── Google Fonts ── */
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+
+@import "tailwindcss";
+
+/* ── Cata Design System Theme ── */
+@theme {
+  /* Colors - Primitives */
+  --color-background: #FAFAFA;
+  --color-foreground: #212121;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #212121;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #212121;
+  --color-primary: #6F470B;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #9FBDF0;
+  --color-secondary-foreground: #212121;
+  --color-muted: #F1F3F5;
+  --color-muted-foreground: #666666;
+  --color-accent: #E8EEF9;
+  --color-accent-foreground: #212121;
+  --color-destructive: #FF4E00;
+  --color-destructive-foreground: #FFFFFF;
+  --color-destructive-text: #C43D00;
+  --color-success: #ABD714;
+  --color-success-text: #4D6B00;
+  --color-warning: #FFDB2C;
+  --color-info: #9FBDF0;
+  --color-border: #E5E5E5;
+  --color-input: #E5E5E5;
+  --color-ring: #6F470B;
+  --color-tooltip-bg: #212121;
+  --color-tooltip-fg: #FFFFFF;
+
+  /* Colors - Charts */
+  --color-chart-1: #6F470B;
+  --color-chart-2: #9FBDF0;
+  --color-chart-3: #7689ED;
+  --color-chart-4: #A68EEB;
+  --color-chart-5: #ABD714;
+  --color-chart-6: #FFDB2C;
+  --color-chart-7: #F78D5C;
+  --color-chart-8: #FF4E00;
+
+  /* Shadows */
+  --shadow-cata-xs: 0 1px 2px rgba(111, 71, 11, 0.05);
+  --shadow-cata-sm: 0 1px 3px rgba(111, 71, 11, 0.08), 0 1px 2px rgba(111, 71, 11, 0.04);
+  --shadow-cata-md: 0 4px 6px rgba(111, 71, 11, 0.07), 0 2px 4px rgba(111, 71, 11, 0.04);
+  --shadow-cata-lg: 0 10px 15px rgba(111, 71, 11, 0.08), 0 4px 6px rgba(111, 71, 11, 0.04);
+  --shadow-cata-xl: 0 20px 25px rgba(111, 71, 11, 0.10), 0 8px 10px rgba(111, 71, 11, 0.04);
+
+  /* Easings & Durations */
+  --ease-cata: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-default: 200ms;
+  --duration-slow: 300ms;
+
+  /* Animations */
+  --animate-cata-fade-in: cata-fade-in 300ms var(--ease-cata) both;
+  --animate-cata-fade-up: cata-fade-up 300ms var(--ease-cata) both;
+  --animate-cata-scale-in: cata-scale-in 200ms var(--ease-cata) both;
+  --animate-cata-slide-in-right: cata-slide-in-right 300ms var(--ease-cata) both;
+}
+
+/* ── Dark Mode Overrides ── */
+.dark {
+  --color-background: #161616;
+  --color-foreground: #FFFFFF;
+  --color-card: #1E1E1E;
+  --color-card-foreground: #FFFFFF;
+  --color-popover: #2A2A2A;
+  --color-popover-foreground: #FFFFFF;
+  --color-primary: #9FBDF0;
+  --color-primary-foreground: #212121;
+  --color-secondary: #6F470B;
+  --color-secondary-foreground: #FFFFFF;
+  --color-muted: #333333;
+  --color-muted-foreground: #999999;
+  --color-accent: #252525;
+  --color-accent-foreground: #FFFFFF;
+  --color-destructive: #FF4E00;
+  --color-destructive-foreground: #FFFFFF;
+  --color-destructive-text: #FF7A40;
+  --color-success-text: #B8E035;
+  --color-border: #3A3A3A;
+  --color-input: #3A3A3A;
+  --color-ring: #9FBDF0;
+  --color-tooltip-bg: #FFFFFF;
+  --color-tooltip-fg: #212121;
+}
+
+/* ── Keyframes ── */
+@keyframes cata-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cata-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cata-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cata-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Base Styles ── */
+body {
+  font-family: "Host Grotesk", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* ── Focus Visible ── */
+*:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: color-mix(in srgb, var(--color-secondary) 30%, transparent);
+}
+
+/* ── Scrollbar Utility ── */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-muted) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--color-muted);
+  border-radius: 9999px;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Recharts Overrides ── */
+.recharts-tooltip-wrapper {
+  transition: transform var(--duration-fast) var(--ease-cata);
+}
+
+.recharts-default-tooltip {
+  box-shadow: var(--shadow-cata-md);
+  border-color: var(--color-border) !important;
+  background-color: var(--color-card) !important;
+  border-radius: 0.5rem;
+}
+
+.recharts-cursor {
+  transition: opacity var(--duration-fast) var(--ease-cata);
+}
+
+.recharts-pie-sector {
+  transition: transform var(--duration-default) var(--ease-cata);
+}
