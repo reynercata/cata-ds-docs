@@ -240,6 +240,14 @@ export const colorGroups: ColorGroup[] = [
         tailwind: "bg-info",
       },
       {
+        name: "--info-text",
+        light: "#2B579A",
+        dark: "#93B4F4",
+        usage: "Info text (WCAG 4.5:1+)",
+        cssVar: "var(--color-info-text)",
+        tailwind: "text-info-text",
+      },
+      {
         name: "--destructive-text",
         light: "#C43D00",
         dark: "#FF7A40",

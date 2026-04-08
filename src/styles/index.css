@@ -27,6 +27,8 @@
   --color-success-text: #4D6B00;
   --color-warning: #FFDB2C;
   --color-info: #9FBDF0;
+  --color-info-text: #2B579A;
+  --color-on-bright: #212121;
   --color-border: #E5E5E5;
   --color-input: #E5E5E5;
   --color-ring: #6F470B;
@@ -83,6 +85,8 @@
   --color-destructive-foreground: #FFFFFF;
   --color-destructive-text: #FF7A40;
   --color-success-text: #B8E035;
+  --color-info-text: #93B4F4;
+  --color-on-bright: #212121;
   --color-border: #3A3A3A;
   --color-input: #3A3A3A;
   --color-ring: #9FBDF0;
