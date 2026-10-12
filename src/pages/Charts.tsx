@@ -81,7 +81,7 @@ export default function Charts() {
   pointer-events: none;
 }
 .recharts-default-tooltip {
-  box-shadow: 0 4px 6px rgba(111, 71, 11, 0.07), 0 2px 4px rgba(111, 71, 11, 0.04);
+  box-shadow: 0 4px 6px rgba(33, 33, 33, 0.07), 0 2px 4px rgba(33, 33, 33, 0.04);
 }
 .recharts-tooltip-cursor {
   transition: fill-opacity 200ms ease;
@@ -119,7 +119,7 @@ function SmoothBarCursor({ x, y, width, height }: any) {
   return (
     <rect
       ref={ref}
-      fill="var(--color-primary)"
+      fill="var(--color-foreground)"
       fillOpacity={0.08}
       rx={4}
       style={{
@@ -138,7 +138,7 @@ function SmoothBarCursor({ x, y, width, height }: any) {
   <XAxis dataKey="name" tickLine={false} axisLine={false} />
   <YAxis tickLine={false} axisLine={false} />
   <Tooltip contentStyle={tooltipStyle} cursor={<SmoothBarCursor />} />
-  <Bar dataKey="value" fill="var(--color-primary)" radius={[4, 4, 0, 0]} />
+  <Bar dataKey="value" fill="var(--color-chart-1)" radius={[4, 4, 0, 0]} />
 </BarChart>`}
         />
       </section>
@@ -216,7 +216,7 @@ function GlidingDots({ formattedGraphicalItems, activeTooltipIndex }: any) {
   <Line
     type="monotone"
     dataKey="revenue"
-    stroke="var(--color-primary)"
+    stroke="var(--color-chart-1)"
     strokeWidth={2}
     dot={false}
     activeDot={false}

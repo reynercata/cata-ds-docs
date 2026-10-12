@@ -12,8 +12,8 @@ const contrastExamples = [
   {
     label: 'Primary foreground on primary',
     fg: '#FFFFFF',
-    bg: '#6F470B',
-    ratio: '7.2:1',
+    bg: '#212121',
+    ratio: '16.1:1',
     pass: true,
   },
   {

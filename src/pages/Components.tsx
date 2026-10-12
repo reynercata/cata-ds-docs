@@ -30,7 +30,7 @@ const buttonCode = `{/* Primary */}
 </button>
 
 {/* Outline */}
-<button className="inline-flex items-center justify-center rounded-full border border-ring text-primary bg-transparent px-6 py-2.5 text-sm font-semibold transition-colors">
+<button className="inline-flex items-center justify-center rounded-full border border-foreground text-foreground bg-transparent px-6 py-2.5 text-sm font-semibold transition-colors">
   Outline
 </button>
 
@@ -54,8 +54,8 @@ const badgeCode = `{/* Success solid */}  <span className="inline-flex items-cen
 {/* Success soft */}  <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-success/12 text-success-text">Success</span>
 {/* Warning solid */}  <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-warning text-on-bright">Warning</span>
 {/* Warning soft */}  <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-warning/12 text-primary">Warning</span>
-{/* Info solid */}     <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-secondary text-foreground">Info</span>
-{/* Info soft */}      <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-secondary/12 text-info-text">Info</span>
+{/* Info solid */}     <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-info text-on-bright">Info</span>
+{/* Info soft */}      <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-info/12 text-info-text">Info</span>
 {/* Destructive */}    <span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-destructive text-white">Error</span>
 {/* Destructive soft */<span className="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-destructive/8 text-destructive-text">Error</span>`
 
@@ -98,7 +98,7 @@ const cardSelectCode = `{/* Default */}
 </div>
 
 {/* Selected */}
-<div className="flex items-center gap-3.5 p-[15px] rounded-xl border-2 border-primary bg-accent cursor-pointer">
+<div className="flex items-center gap-3.5 p-[15px] rounded-xl border-2 border-primary bg-selected cursor-pointer">
   <div className="size-12 rounded-full bg-muted flex items-center justify-center shrink-0">
     <Icon className="size-5" />
   </div>
@@ -179,7 +179,7 @@ function CardSelectDemo() {
               onClick={() => setSelected(item.id)}
               className={`flex items-center gap-3.5 rounded-xl cursor-pointer transition-shadow ${
                 isSelected
-                  ? 'p-[15px] border-2 border-primary bg-accent'
+                  ? 'p-[15px] border-2 border-primary bg-selected'
                   : 'p-4 border border-border/60 bg-card hover:shadow-[var(--shadow-cata-sm)]'
               }`}
             >
@@ -331,7 +331,7 @@ export default function Components() {
           <button className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold transition-colors">
             Primary Action
           </button>
-          <button className="inline-flex items-center justify-center rounded-full border border-ring text-primary bg-transparent px-6 py-2.5 text-sm font-semibold transition-colors">
+          <button className="inline-flex items-center justify-center rounded-full border border-foreground text-foreground bg-transparent px-6 py-2.5 text-sm font-semibold transition-colors">
             Outline
           </button>
           <button className="inline-flex items-center justify-center rounded-lg bg-transparent text-muted-foreground px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-muted hover:text-foreground">
@@ -370,8 +370,8 @@ export default function Components() {
           <span className={`${badge} bg-success/12 text-success-text`}>Success</span>
           <span className={`${badge} bg-warning text-on-bright`}>Warning</span>
           <span className={`${badge} bg-warning/12 text-primary`}>Warning</span>
-          <span className={`${badge} bg-secondary text-foreground`}>Info</span>
-          <span className={`${badge} bg-secondary/12 text-info-text`}>Info</span>
+          <span className={`${badge} bg-info text-on-bright`}>Info</span>
+          <span className={`${badge} bg-info/12 text-info-text`}>Info</span>
           <span className={`${badge} bg-destructive text-white`}>Error</span>
           <span className={`${badge} bg-destructive/8 text-destructive-text`}>Error</span>
         </div>

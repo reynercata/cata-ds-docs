@@ -22,6 +22,8 @@ export interface ColorGroup {
 export interface ChartColor {
   order: number;
   hex: string;
+  /** Dark-theme value when it differs from `hex` (chart-1 / chart-2 swap on dark). */
+  dark?: string;
   label: string;
 }
 
@@ -143,11 +145,19 @@ export const colorGroups: ColorGroup[] = [
       },
       {
         name: "--accent",
-        light: "#E8EEF9",
+        light: "#F0F3F8",
         dark: "#252525",
         usage: "Hover bg, active rows",
         cssVar: "var(--color-accent)",
         tailwind: "bg-accent",
+      },
+      {
+        name: "--selected",
+        light: "#ECF2FD",
+        dark: "#22314A",
+        usage: "Selected rows and options (cloud blue tint)",
+        cssVar: "var(--color-selected)",
+        tailwind: "bg-selected",
       },
     ],
   },
@@ -156,9 +166,9 @@ export const colorGroups: ColorGroup[] = [
     tokens: [
       {
         name: "--primary",
-        light: "#6F470B",
+        light: "#212121",
         dark: "#9FBDF0",
-        usage: "CTAs, logo, key actions",
+        usage: "Primary actions, checked controls (charcoal; cloud blue on dark)",
         cssVar: "var(--color-primary)",
         tailwind: "bg-primary",
       },
@@ -172,27 +182,35 @@ export const colorGroups: ColorGroup[] = [
       },
       {
         name: "--secondary",
-        light: "#9FBDF0",
-        dark: "#6F470B",
-        usage: "Bumpers, highlights",
+        light: "#6F470B",
+        dark: "#D9A441",
+        usage: "Gold brand accent: links, eyebrows, small badges. Never an action or large fill",
         cssVar: "var(--color-secondary)",
         tailwind: "bg-secondary",
       },
       {
         name: "--secondary-foreground",
-        light: "#212121",
-        dark: "#FFFFFF",
+        light: "#FFFFFF",
+        dark: "#212121",
         usage: "Text on secondary",
         cssVar: "var(--color-secondary-foreground)",
         tailwind: "bg-secondary-foreground",
       },
       {
         name: "--ring",
-        light: "#6F470B",
+        light: "#9FBDF0",
         dark: "#9FBDF0",
-        usage: "Focus ring",
+        usage: "Focus ring (cloud blue, inner)",
         cssVar: "var(--color-ring)",
         tailwind: "ring-ring",
+      },
+      {
+        name: "--ring-outer",
+        light: "#212121",
+        dark: "#FFFFFF",
+        usage: "Focus ring outer edge (3:1 boundary)",
+        cssVar: "var(--color-ring-outer)",
+        tailwind: "ring-ring-outer",
       },
     ],
   },
@@ -302,8 +320,8 @@ export const colorGroups: ColorGroup[] = [
 ];
 
 export const chartPalette: ChartColor[] = [
-  { order: 1, hex: "#6F470B", label: "Gold" },
-  { order: 2, hex: "#9FBDF0", label: "Blue" },
+  { order: 1, hex: "#6F470B", dark: "#9FBDF0", label: "Gold" },
+  { order: 2, hex: "#9FBDF0", dark: "#6F470B", label: "Blue" },
   { order: 3, hex: "#7689ED", label: "Blue Vivid" },
   { order: 4, hex: "#A68EEB", label: "Purple" },
   { order: 5, hex: "#ABD714", label: "Lime" },
@@ -413,35 +431,35 @@ export const shadows: ShadowToken[] = [
   {
     name: "shadow-xs",
     level: "xs",
-    value: "0 1px 2px rgba(111,71,11,0.05)",
+    value: "0 1px 2px rgba(33,33,33,0.05)",
     usage: "Inputs",
   },
   {
     name: "shadow-sm",
     level: "sm",
     value:
-      "0 1px 3px rgba(111,71,11,0.08), 0 1px 2px rgba(111,71,11,0.04)",
+      "0 1px 3px rgba(33,33,33,0.08), 0 1px 2px rgba(33,33,33,0.04)",
     usage: "Cards",
   },
   {
     name: "shadow-md",
     level: "md",
     value:
-      "0 4px 6px rgba(111,71,11,0.07), 0 2px 4px rgba(111,71,11,0.04)",
+      "0 4px 6px rgba(33,33,33,0.07), 0 2px 4px rgba(33,33,33,0.04)",
     usage: "Hover, dropdowns",
   },
   {
     name: "shadow-lg",
     level: "lg",
     value:
-      "0 10px 15px rgba(111,71,11,0.08), 0 4px 6px rgba(111,71,11,0.04)",
+      "0 10px 15px rgba(33,33,33,0.08), 0 4px 6px rgba(33,33,33,0.04)",
     usage: "Modals",
   },
   {
     name: "shadow-xl",
     level: "xl",
     value:
-      "0 20px 25px rgba(111,71,11,0.10), 0 8px 10px rgba(111,71,11,0.04)",
+      "0 20px 25px rgba(33,33,33,0.10), 0 8px 10px rgba(33,33,33,0.04)",
     usage: "Floating panels",
   },
 ];
@@ -516,7 +534,7 @@ export const motionTokens: MotionToken[] = [
 export const CATA_EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
 /** Cata DS v1.1: on-screen movement the pointer doesn't drive. */
 export const CATA_EASE_IN_OUT = "cubic-bezier(0.77, 0, 0.175, 1)";
-/** @deprecated Cata DS v1.1, removed in v1.2. Use CATA_EASE_OUT / CATA_EASE_IN_OUT / "ease". */
+/** @deprecated Cata DS v1.1, removed in v1.3. Use CATA_EASE_OUT / CATA_EASE_IN_OUT / "ease". */
 export const CATA_EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
 
 // ---- 8. Responsive Adaptation Rules --------------------------------------

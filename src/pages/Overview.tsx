@@ -96,7 +96,7 @@ export default function Overview() {
             <Link
               key={path}
               to={path}
-              className="group block rounded-xl border border-border/60 bg-card p-5 transition-shadow hover:shadow-[0_4px_6px_rgba(111,71,11,0.07),0_2px_4px_rgba(111,71,11,0.04)]"
+              className="group block rounded-xl border border-border/60 bg-card p-5 transition-shadow hover:shadow-[0_4px_6px_rgba(33,33,33,0.07),0_2px_4px_rgba(33,33,33,0.04)]"
             >
               <div className="mb-2 flex items-center gap-2">
                 <Icon className="h-5 w-5 text-primary" />

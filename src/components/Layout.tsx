@@ -108,7 +108,7 @@ export function Layout() {
         {searchOpen && (
           <div className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh]">
             <div className="fixed inset-0 bg-black/40" onClick={() => setSearchOpen(false)} />
-            <div className="relative w-full max-w-md mx-4 rounded-xl border border-border/60 bg-card shadow-[0_20px_25px_rgba(111,71,11,0.10),0_8px_10px_rgba(111,71,11,0.04)] animate-[var(--animate-cata-scale-in)]">
+            <div className="relative w-full max-w-md mx-4 rounded-xl border border-border/60 bg-card shadow-[0_20px_25px_rgba(33,33,33,0.10),0_8px_10px_rgba(33,33,33,0.04)] animate-[var(--animate-cata-scale-in)]">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-border/40">
                 <Search className="size-4 text-muted-foreground shrink-0" />
                 <input

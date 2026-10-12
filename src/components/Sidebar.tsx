@@ -36,7 +36,7 @@ function NavContent({ onClose }: { onClose?: () => void }) {
   return (
     <>
       <div className="flex items-center justify-between px-4 py-4">
-        <NavLink to="/" className="font-extrabold text-lg text-primary">
+        <NavLink to="/" className="font-extrabold text-lg text-secondary">
           Cata DS
         </NavLink>
         {onClose && (

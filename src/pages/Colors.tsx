@@ -71,7 +71,7 @@ export default function Colors() {
               key={color.order}
               name={`chart-${color.order}`}
               light={color.hex}
-              dark={color.hex}
+              dark={color.dark ?? color.hex}
               usage={color.label}
               currentTheme={currentTheme}
             />
