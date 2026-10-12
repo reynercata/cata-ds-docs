@@ -570,9 +570,9 @@ export const responsiveRules: ResponsiveRule[] = [
   },
   {
     component: "KPI row",
-    mobile: "Stacked vertically, single column",
-    tablet: "2-column grid",
-    desktop: "Horizontal row, 4-6 items",
+    mobile: "Container tiers: one column, then 2 + 2 + 1 (the last card spans)",
+    tablet: "Container tiers: 3 + 2 for five cards (13.25rem minimum card)",
+    desktop: "Container tiers: five across from 70.25rem of content width; never a lone card, at most 6",
   },
   {
     component: "Charts",

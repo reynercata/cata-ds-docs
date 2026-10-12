@@ -4,7 +4,7 @@ const breakpoints = [
   { name: 'sm', width: '640px', context: 'Small tablet' },
   { name: 'md', width: '768px', context: 'Tablet portrait' },
   { name: 'lg', width: '1024px', context: 'Desktop sidebar appears' },
-  { name: 'xl', width: '1280px', context: 'Full KPI row' },
+  { name: 'xl', width: '1280px', context: 'Desktop' },
   { name: '2xl', width: '1536px', context: 'Large desktop' },
 ]
 
@@ -35,9 +35,9 @@ const responsiveRules = [
   },
   {
     component: 'KPI cards',
-    mobile: '2-column grid',
-    tablet: '3-column grid',
-    desktop: 'Single row 5 columns',
+    mobile: 'Container tiers: one column, then 2 + 2 + 1 (the last card spans)',
+    tablet: 'Container tiers: 3 + 2 for five cards (13.25rem minimum card)',
+    desktop: 'Container tiers: five across from 70.25rem of content width; never a lone card, never a joined strip',
   },
   {
     component: 'Charts',
