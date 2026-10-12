@@ -88,7 +88,7 @@
   --color-brand-foreground: #212121;
   --color-muted: #333333;
   --color-muted-foreground: #999999;
-  --color-accent: #252525;
+  --color-accent: #333333; /* lighter than the popover #2A2A2A so menu hover shows (Cata DS v1.2.1) */
   --color-accent-foreground: #FFFFFF;
   --color-selected: #22314A;
   --color-destructive: #FF4E00;
@@ -106,7 +106,7 @@
 
   /* Charts: series swap so blue leads on dark */
   --color-chart-1: #9FBDF0;
-  --color-chart-2: #6F470B;
+  --color-chart-2: #D9A441; /* bright gold: dark gold is 2.3:1 on the #1E1E1E card (Cata DS v1.2.1) */
 }
 
 /* ── Keyframes ── */

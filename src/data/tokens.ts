@@ -146,7 +146,7 @@ export const colorGroups: ColorGroup[] = [
       {
         name: "--accent",
         light: "#F0F3F8",
-        dark: "#252525",
+        dark: "#333333",
         usage: "Hover bg, active rows",
         cssVar: "var(--color-accent)",
         tailwind: "bg-accent",
@@ -337,7 +337,7 @@ export const colorGroups: ColorGroup[] = [
 
 export const chartPalette: ChartColor[] = [
   { order: 1, hex: "#6F470B", dark: "#9FBDF0", label: "Gold" },
-  { order: 2, hex: "#9FBDF0", dark: "#6F470B", label: "Blue" },
+  { order: 2, hex: "#9FBDF0", dark: "#D9A441", label: "Blue" },
   { order: 3, hex: "#7689ED", label: "Blue Vivid" },
   { order: 4, hex: "#A68EEB", label: "Purple" },
   { order: 5, hex: "#ABD714", label: "Lime" },
