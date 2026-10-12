@@ -301,14 +301,14 @@ function useDonutTooltipFix(cx: number, cy: number) {
           </h3>
           <ol className="list-decimal list-inside space-y-3 text-sm text-foreground">
             <li>
-              <span className="font-semibold">SVG geometric attributes cannot be CSS-transitioned.</span>{' '}
+              <span className="font-semibold">Don't rely on transitioning SVG geometric attributes.</span>{' '}
               Properties like <code className="text-xs bg-muted px-1.5 py-0.5 rounded">x</code>,{' '}
               <code className="text-xs bg-muted px-1.5 py-0.5 rounded">y</code>,{' '}
               <code className="text-xs bg-muted px-1.5 py-0.5 rounded">width</code>,{' '}
               <code className="text-xs bg-muted px-1.5 py-0.5 rounded">height</code>,{' '}
               <code className="text-xs bg-muted px-1.5 py-0.5 rounded">cx</code>,{' '}
               <code className="text-xs bg-muted px-1.5 py-0.5 rounded">cy</code>{' '}
-              are not animatable via CSS transitions in most browsers.
+              are not reliably animatable via CSS transitions. The exception is the path <code className="text-xs bg-muted px-1.5 py-0.5 rounded">d</code>, which Chromium animates (a donut slice expand lists it explicitly); other browsers snap.
             </li>
             <li>
               <span className="font-semibold">
