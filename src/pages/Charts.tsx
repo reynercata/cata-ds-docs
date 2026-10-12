@@ -77,17 +77,17 @@ export default function Charts() {
         <CodeBlock
           language="css"
           code={`.recharts-tooltip-wrapper {
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: transform 250ms var(--cata-ease-out) !important; /* follows the pointer */
   pointer-events: none;
 }
 .recharts-default-tooltip {
   box-shadow: 0 4px 6px rgba(111, 71, 11, 0.07), 0 2px 4px rgba(111, 71, 11, 0.04);
 }
 .recharts-tooltip-cursor {
-  transition: fill-opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill-opacity 200ms ease;
 }
 .recharts-pie-sector {
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms ease;
 }`}
         />
       </section>
@@ -123,9 +123,10 @@ function SmoothBarCursor({ x, y, width, height }: any) {
       fillOpacity={0.08}
       rx={4}
       style={{
-        transition: "transform 250ms cubic-bezier(0.4,0,0.2,1), " +
-                    "width 250ms cubic-bezier(0.4,0,0.2,1), " +
-                    "height 250ms cubic-bezier(0.4,0,0.2,1)",
+        // Follows the pointer: --cata-ease-out (Cata DS v1.1)
+        transition: "transform 250ms cubic-bezier(0.23, 1, 0.32, 1), " +
+                    "width 250ms cubic-bezier(0.23, 1, 0.32, 1), " +
+                    "height 250ms cubic-bezier(0.23, 1, 0.32, 1)",
       }}
     />
   )
@@ -179,7 +180,7 @@ function SmoothLineCursor({ points, height }: any) {
       y2={height}
       stroke="var(--color-border)"
       strokeWidth={1}
-      style={{ transition: "transform 250ms cubic-bezier(0.4,0,0.2,1)" }}
+      style={{ transition: "transform 250ms cubic-bezier(0.23, 1, 0.32, 1)" }} // follows the pointer
     />
   )
 }
@@ -198,7 +199,7 @@ function GlidingDots({ formattedGraphicalItems, activeTooltipIndex }: any) {
         fill={item.props.stroke}
         style={{
           transform: \`translate(\${point.x}px, \${point.y}px)\`,
-          transition: "transform 250ms cubic-bezier(0.4,0,0.2,1)",
+          transition: "transform 250ms cubic-bezier(0.23, 1, 0.32, 1)", // follows the pointer
         }}
       />
     )
@@ -244,7 +245,7 @@ function AnimatedSlice(props: any) {
       style={{
         transform: \`scale(1.04)\`,
         transformOrigin: \`\${cx}px \${cy}px\`,
-        transition: "transform 250ms cubic-bezier(0.4,0,0.2,1)",
+        transition: "transform 250ms cubic-bezier(0.23, 1, 0.32, 1)",
       }}
     >
       <Sector

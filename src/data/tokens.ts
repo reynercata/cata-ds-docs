@@ -512,6 +512,11 @@ export const motionTokens: MotionToken[] = [
   { speed: "Slow", duration: "250-300ms", use: "Page transitions, complex layout shifts" },
 ];
 
+/** Cata DS v1.1: enter / exit, pointer-following, default. */
+export const CATA_EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
+/** Cata DS v1.1: on-screen movement the pointer doesn't drive. */
+export const CATA_EASE_IN_OUT = "cubic-bezier(0.77, 0, 0.175, 1)";
+/** @deprecated Cata DS v1.1, removed in v1.2. Use CATA_EASE_OUT / CATA_EASE_IN_OUT / "ease". */
 export const CATA_EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
 
 // ---- 8. Responsive Adaptation Rules --------------------------------------

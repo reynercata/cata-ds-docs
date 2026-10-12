@@ -52,17 +52,20 @@
   --shadow-cata-lg: 0 10px 15px rgba(111, 71, 11, 0.08), 0 4px 6px rgba(111, 71, 11, 0.04);
   --shadow-cata-xl: 0 20px 25px rgba(111, 71, 11, 0.10), 0 8px 10px rgba(111, 71, 11, 0.04);
 
-  /* Easings & Durations */
-  --ease-cata: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Easings & Durations (Cata DS v1.1: curve by purpose) */
+  --ease-cata-out: cubic-bezier(0.23, 1, 0.32, 1);     /* enter / exit, pointer-following, default */
+  --ease-cata-in-out: cubic-bezier(0.77, 0, 0.175, 1); /* on-screen movement */
+  --ease-cata: cubic-bezier(0.4, 0, 0.2, 1);           /* deprecated v1.1, removed v1.2 */
+  --default-transition-timing-function: ease;          /* hover / colour */
   --duration-fast: 150ms;
   --duration-default: 200ms;
   --duration-slow: 300ms;
 
   /* Animations */
-  --animate-cata-fade-in: cata-fade-in 300ms var(--ease-cata) both;
-  --animate-cata-fade-up: cata-fade-up 300ms var(--ease-cata) both;
-  --animate-cata-scale-in: cata-scale-in 200ms var(--ease-cata) both;
-  --animate-cata-slide-in-right: cata-slide-in-right 300ms var(--ease-cata) both;
+  --animate-cata-fade-in: cata-fade-in 300ms var(--ease-cata-out) both;
+  --animate-cata-fade-up: cata-fade-up 300ms var(--ease-cata-out) both;
+  --animate-cata-scale-in: cata-scale-in 200ms var(--ease-cata-out) both;
+  --animate-cata-slide-in-right: cata-slide-in-right 300ms var(--ease-cata-out) both;
 }
 
 /* ── Dark Mode Overrides ── */
@@ -191,7 +194,7 @@ body {
 
 /* ── Recharts Overrides ── */
 .recharts-tooltip-wrapper {
-  transition: transform var(--duration-fast) var(--ease-cata);
+  transition: transform var(--duration-fast) var(--ease-cata-out); /* follows the pointer */
 }
 
 .recharts-default-tooltip {
@@ -202,9 +205,9 @@ body {
 }
 
 .recharts-cursor {
-  transition: opacity var(--duration-fast) var(--ease-cata);
+  transition: opacity var(--duration-fast) ease;
 }
 
 .recharts-pie-sector {
-  transition: transform var(--duration-default) var(--ease-cata);
+  transition: transform var(--duration-default) var(--ease-cata-out);
 }
