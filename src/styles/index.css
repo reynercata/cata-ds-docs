@@ -14,8 +14,10 @@
   --color-popover-foreground: #212121;
   --color-primary: #212121;
   --color-primary-foreground: #FFFFFF;
-  --color-secondary: #6F470B;
-  --color-secondary-foreground: #FFFFFF;
+  --color-secondary: #F1F3F5;
+  --color-secondary-foreground: #212121;
+  --color-brand: #6F470B; /* gold accent (Cata DS v1.2.1; was --color-secondary) */
+  --color-brand-foreground: #FFFFFF;
   --color-muted: #F1F3F5;
   --color-muted-foreground: #666666;
   --color-accent: #F0F3F8;
@@ -80,8 +82,10 @@
   --color-popover-foreground: #FFFFFF;
   --color-primary: #9FBDF0;
   --color-primary-foreground: #212121;
-  --color-secondary: #D9A441;
-  --color-secondary-foreground: #212121;
+  --color-secondary: #333333;
+  --color-secondary-foreground: #FFFFFF;
+  --color-brand: #D9A441;
+  --color-brand-foreground: #212121;
   --color-muted: #333333;
   --color-muted-foreground: #999999;
   --color-accent: #252525;

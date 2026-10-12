@@ -73,7 +73,7 @@ function AnimationCard({
         <span className="text-xs text-muted-foreground">{description}</span>
         <button
           onClick={() => setKey((k) => k + 1)}
-          className="text-xs text-secondary cursor-pointer hover:underline"
+          className="text-xs text-brand cursor-pointer hover:underline"
         >
           Replay
         </button>
